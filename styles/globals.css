@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .focusable-base {
+    outline: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
+}
+@media (prefers-color-scheme: dark) {
+}
+
+a {
+  text-decoration: none;
+}
