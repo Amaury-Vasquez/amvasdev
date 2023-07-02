@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { FC } from 'react';
 import Menu from './Menu';
+import { Link } from '@/components';
 import ToggleTheme from './ToggleTheme';
 
 const Header: FC = () => {
@@ -11,7 +11,8 @@ const Header: FC = () => {
       </div>
       <Link
         href="/"
-        className="btn btn-ghost normal-case text-xl max-xxs:row-start-1 max-xxs:col-span-2"
+        variant="ghost"
+        className="normal-case text-xl max-xxs:row-start-1 max-xxs:col-span-2"
       >
         Amaury Vasquez
       </Link>

@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { FC } from 'react';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import { IconLink } from '@/components';
@@ -13,9 +14,16 @@ const SOCIAL_MEDIA_LINKS: IconLinkItem[] = [
 ];
 
 const Footer: FC = () => (
-  <footer className="flex justify-between w-full items-center h-fit px-4 py-2 max-xs:flex-col">
-    <p className="font-semibold text-center">@amvasdev © All rights reserved</p>
-    <div className="flex gap-4">
+  <footer
+    className={clsx(
+      'flex justify-between w-full items-center h-fit px-4 py-2',
+      'max-xs:grid max-xs:place-items-center max-xs:grid-cols-1'
+    )}
+  >
+    <p className="font-medium text-center max-xs:w-full max-xs:row-start-2">
+      @amvasdev © All rights reserved
+    </p>
+    <div className="flex gap-4 max-xs:w-full max-xs:justify-center">
       {SOCIAL_MEDIA_LINKS.map(({ url, icon }, idx) => (
         <IconLink
           Icon={icon}

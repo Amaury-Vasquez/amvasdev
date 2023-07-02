@@ -20,8 +20,6 @@ const ToggleTheme: FC = () => {
   const ref = useOnClickOutside<HTMLDivElement>(deactivate);
 
   const handleCookieChange = (theme: string) => {
-    const root = document.querySelector('html');
-    // root?.setAttribute('data-theme', theme);
     setCookies('theme', theme);
   };
 

@@ -3,8 +3,8 @@ import { FC, HTMLProps, ReactNode } from 'react';
 import { ButtonVariants, ButtonType, ButtonSizes } from '@/types/buttonTypes';
 
 const VARIANT_STYLES = {
-  base: '',
-  neutral: 'btn-neutral',
+  base: 'hover:text-primary',
+  neutral: 'btn-neutral hover:text-primary',
   primary: 'btn-primary',
   secondary: 'btn-secondary',
   accent: 'btn-accent',
@@ -37,7 +37,7 @@ const Button: FC<ButtonProps> = ({
   children,
   className,
   tooltip,
-  variant,
+  variant = 'base',
   size,
   ...props
 }) => (
