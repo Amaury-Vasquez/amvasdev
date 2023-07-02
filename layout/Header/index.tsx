@@ -5,7 +5,7 @@ import ToggleTheme from './ToggleTheme';
 
 const Header: FC = () => {
   return (
-    <header className="navbar bg-base-100 justify-between max-xxs:grid max-xxs:grid-rows-2 max-xxs:grid-cols-2">
+    <header className="navbar bg-base-100 justify-between max-xxs:grid max-xxs:grid-rows-2 max-xxs:grid-cols-2 fixed top-0 z-50">
       <div>
         <Menu />
       </div>

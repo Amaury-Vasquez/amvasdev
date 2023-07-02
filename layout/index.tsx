@@ -17,7 +17,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <div className="bg-base-200 min-h-content h-fit">{children}</div>
+      <div className="bg-base-200 min-h-content h-fit mt-14">{children}</div>
       <Footer />
     </>
   );
