@@ -30,6 +30,7 @@ module.exports = {
       },
       minHeight: {
         content: 'calc(100vh - 120px)',
+        'xxs-screen': 'calc(100vh - 172px)',
       },
       screens: {
         xxs: '320px',
