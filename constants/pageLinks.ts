@@ -11,11 +11,6 @@ export const PAGE_LINKS: ButtonLinkItem[] = [
     variant: 'primary',
   },
   {
-    name: 'Skills',
-    url: '/skills',
-    variant: 'secondary',
-  },
-  {
     name: 'My work',
     url: '/my-work',
     variant: 'accent',
@@ -23,7 +18,7 @@ export const PAGE_LINKS: ButtonLinkItem[] = [
   {
     name: 'Experience',
     url: '/experience',
-    variant: 'neutral',
+    variant: 'secondary',
   },
   {
     name: 'Education',
