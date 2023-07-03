@@ -12,6 +12,7 @@ export default function MyWorkPage() {
           name="description"
           content="Amaury Vasquez development work. List of web applications created, developed, and maintained by Amaury Vasquez. Main stack: React, Python, Typescript, FastAPI."
         />
+        <link rel="canonical" href="https://amauryvasquez.com/my-work" />
       </Head>
       <MyWork />
     </>
