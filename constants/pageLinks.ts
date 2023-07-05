@@ -4,6 +4,7 @@ export const PAGE_LINKS: ButtonLinkItem[] = [
   {
     name: 'Home page',
     url: '/',
+    variant: 'neutral',
   },
   {
     name: 'About',
