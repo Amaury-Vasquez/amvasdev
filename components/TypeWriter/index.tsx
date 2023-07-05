@@ -1,4 +1,3 @@
-'use client';
 import { FC, ReactNode, useEffect, useState } from 'react';
 
 export interface MultipleTypeWriterProps {

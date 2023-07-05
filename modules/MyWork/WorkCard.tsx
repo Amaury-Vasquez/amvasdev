@@ -14,15 +14,9 @@ const WorkCard: FC<WorkCardProps> = ({
   github,
   image,
 }) => (
-  <div className="card bg-base-100 shadow-xl relative h-full w-full rounded-xl">
+  <div className="card bg-base-100 bg-opacity-70 shadow-xl relative h-full w-full rounded-xl">
     <figure className="w-full absolute h-full opacity-5 rounded-xl z-0">
-      <Image
-        className="w-full aspect-square"
-        src={image}
-        alt={name}
-        width={500}
-        height={500}
-      />
+      <Image className="w-full aspect-square" src={image} alt={name} fill />
     </figure>
     <div className="card-body col-span-3 relative space-y-2 z-max">
       <h2 className="card-title">{name}</h2>
