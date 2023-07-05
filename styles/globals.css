@@ -8,6 +8,11 @@
     border: 1px solid var(--primary);
     color: var(--primary);
   }
+  *:focus-visible {
+    outline: none;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
 }
 @media (prefers-color-scheme: dark) {
 }

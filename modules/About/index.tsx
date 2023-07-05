@@ -1,26 +1,16 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { GiMexico } from 'react-icons/gi';
 import { SiReact } from 'react-icons/si';
 import { SKILLS } from '@/constants';
+import Avatar from './Avatar';
 
 const About: FC = () => {
   return (
     <main className="flex min-h-content items-start justify-center w-full py-10">
       <div className="max-w-screen xs:max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl grid-cols-1 grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4">
-        <article className="flex flex-col gap-4 items-center w-full shadow-md rounded-md p-4 h-full justify-center">
-          <div className="avatar">
-            <figure className="w-40 rounded-full block aspect-square overflow-hidden ring-2 ring-offset-base-300 ring-offset-2">
-              <Image
-                alt="Amaury Vasquez pic"
-                src="https://i.imgur.com/TvPavKp.jpg"
-                height={636}
-                width={636}
-                priority
-              />
-            </figure>
-          </div>
+        <article className="flex flex-col gap-4 items-center w-full rounded-md p-4 h-full justify-center">
+          <Avatar />
           <h1 className="xxs:text-xl xs:text-3xl md:text-2xl font-normal max-w-full text-primary">
             Amaury Vasquez
           </h1>
@@ -53,7 +43,7 @@ const About: FC = () => {
             Soccer ⚽ Chess ♟️ Gaming 🎮
           </p>
         </article>
-        <article className="flex flex-col gap-4 items-center w-full shadow-md rounded-md h-full p-4 lg:col-span-2">
+        <article className="flex flex-col gap-4 items-center w-full rounded-md h-full p-4 lg:col-span-2">
           <h2 className="text-2xl font-medium w-full text-primary"> Skills </h2>
           <p>
             {`As a skilled professional focused on frontend development, my expertise shines in React and TypeScript. 
@@ -85,7 +75,7 @@ const About: FC = () => {
             ))}
           </div>
         </article>
-        <article className="flex flex-col gap-4 items-center w-full shadow-md rounded-md h-full p-4 md:col-span-2 lg:col-span-3">
+        <article className="flex flex-col gap-4 items-center w-full rounded-md h-full p-4 md:col-span-2 lg:col-span-3">
           <h2 className="text-2xl font-medium w-full text-primary">About me</h2>
           <p>
             My mindset is rooted in the Japanese principles of ikigai and
