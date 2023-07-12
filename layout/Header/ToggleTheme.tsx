@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { FC } from 'react';
 import { useCookies } from 'react-cookie';
+import { FaCircleCheck } from 'react-icons/fa6';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { Button } from '@/components';
 import { THEME_VARIANTS } from '@/constants';
@@ -38,7 +39,12 @@ const ToggleTheme: FC = () => {
                 data-theme={theme}
                 onClick={() => handleCookieChange(theme)}
               >
-                {theme}
+                <span className="flex items-center gap-2">
+                  {cookies.theme === theme && (
+                    <FaCircleCheck className="w-4 h-4" />
+                  )}
+                  {theme}
+                </span>
                 {COLORS.map((color, idx) => (
                   <span
                     key={color + idx}

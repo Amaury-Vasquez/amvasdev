@@ -50,7 +50,6 @@ module.exports = {
       'halloween',
       'corporate',
       'coffee',
-      'lemonade',
     ],
   },
   plugins: [require('daisyui')],

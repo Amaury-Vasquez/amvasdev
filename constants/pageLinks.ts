@@ -22,11 +22,6 @@ export const PAGE_LINKS: ButtonLinkItem[] = [
     variant: 'secondary',
   },
   {
-    name: 'Education',
-    url: '/education',
-    variant: 'success',
-  },
-  {
     name: 'Contact',
     url: '/contact',
     variant: 'info',

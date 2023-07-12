@@ -1,15 +1,18 @@
 import Head from 'next/head';
+import { Experience } from '@/modules';
 
 export default function ExperiencePage() {
   return (
     <>
       <Head>
-        <title> Amaury Vasquez - Laboral Experience</title>
+        <title> Amaury Vasquez - Work Experience</title>
         <meta
           name="description"
-          content="Amaury Vasquez - Laboral Experience. React frontend developer."
+          content="Amaury Vasquez - Work Experience. React frontend developer."
         />
+        <link rel="canonical" href="https://amauryvasquez.com/experience" />
       </Head>
+      <Experience />
     </>
   );
 }

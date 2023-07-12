@@ -6,7 +6,6 @@ export const THEME_VARIANTS = [
   'synthwave',
   'corporate',
   'coffee',
-  'lemonade',
   'halloween',
   'aqua',
 ];
