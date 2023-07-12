@@ -69,8 +69,8 @@ const About: FC = () => {
                 className="flex rounded-md py-2 px-4 font-medium bg-base-300 text-primary gap-2 items-center"
                 key={'aboutskill:' + name + idx}
               >
-                {name}
                 <Icon className="w-5 h-5" />
+                {name}
               </span>
             ))}
           </div>

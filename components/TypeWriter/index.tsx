@@ -15,7 +15,10 @@ const MultipleTypeWriter: FC<MultipleTypeWriterProps> = ({ contents }) => {
 
   useEffect(() => {});
   return (
-    <span className="flex w-fit overflow-hidden whitespace-nowrap text-3xl text-secondary font-bold">
+    <span
+      className="flex w-fit overflow-hidden whitespace-nowrap text-3xl text-secondary font-bold animate-fadeIn"
+      key={`mtypewriter:${content}`}
+    >
       {contents[content]}
     </span>
   );

@@ -6,11 +6,13 @@ import { LinkTarget } from '@/types/linkTypes';
 
 const VARIANT_STYLES = {
   base: '',
-  neutral: 'btn-neutral',
+  neutral:
+    'btn-neutral focus-visible:border-2 focus-visible:border-solid focus-visible:outline-none',
   primary: 'btn-primary',
   secondary: 'btn-secondary',
   accent: 'btn-accent',
-  ghost: 'btn-ghost ',
+  ghost:
+    'btn-ghost focus-visible:outline-none focus-visible:border-2 focus-visible:border-solid focus-visible:border-primary',
   link: 'btn-link',
   info: 'btn-info',
   success: 'btn-success',

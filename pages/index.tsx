@@ -4,11 +4,14 @@ import { PAGE_LINKS, SKILLS } from '@/constants';
 
 export default function Home() {
   const contents = SKILLS.map(({ name, Icon }, idx) => (
-    <span className="flex items-center gap-2" key={'typewritericon:' + idx}>
-      {`${name} `}
+    <span
+      className="flex items-center gap-2 w-fit"
+      key={'typewritericon:' + idx}
+    >
       <span className="w-fit h-fit">
         {<Icon className="transition-all w-8 h-8" />}
       </span>
+      {`${name} `}
     </span>
   ));
 

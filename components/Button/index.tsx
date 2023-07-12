@@ -4,7 +4,8 @@ import { ButtonVariants, ButtonType, ButtonSizes } from '@/types/buttonTypes';
 
 const VARIANT_STYLES = {
   base: 'hover:text-primary',
-  neutral: 'btn-neutral hover:text-primary',
+  neutral:
+    'btn-neutral hover:text-primary focus-visible:border-primary focus-visible:border-2 focus-visible:border-solid focus-visible:outline-none',
   primary: 'btn-primary',
   secondary: 'btn-secondary',
   accent: 'btn-accent',

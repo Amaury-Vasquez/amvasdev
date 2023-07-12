@@ -1,11 +1,12 @@
 export const THEME_VARIANTS = [
+  'dracula',
   'winter',
   'night',
   'emerald',
-  'aqua',
   'synthwave',
   'corporate',
   'coffee',
   'lemonade',
   'halloween',
+  'aqua',
 ];
