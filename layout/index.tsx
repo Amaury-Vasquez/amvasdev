@@ -1,10 +1,15 @@
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
+import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from 'react-icons/md';
 import Footer from './Footer';
 import Header from './Header';
+import { IconLink } from '@/components';
+import { PAGE_LINKS } from '@/constants';
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [cookies, setCookie] = useCookies(['theme']);
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -14,9 +19,35 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     }
   }, [cookies, setCookie]);
 
+  const currentPathIndex = PAGE_LINKS.findIndex(
+    (link) => link.url === router.pathname
+  );
+
   return (
     <>
       <Header />
+      {router.pathname !== '/' && currentPathIndex !== -1 && (
+        <>
+          <IconLink
+            href={
+              currentPathIndex - 1 >= 0
+                ? PAGE_LINKS[currentPathIndex - 1].url
+                : '/'
+            }
+            Icon={MdOutlineNavigateBefore}
+            className="fixed lg:top-1/2 left-2 z-50 text-primary top-32 xs:top-20 bg-base-100 duration-1000"
+          />
+          <IconLink
+            href={
+              currentPathIndex + 1 < PAGE_LINKS.length
+                ? PAGE_LINKS[currentPathIndex + 1].url
+                : '/'
+            }
+            Icon={MdOutlineNavigateNext}
+            className="fixed lg:top-1/2 right-2 z-50 text-primary top-32 xs:top-20 bg-base-100 duration-1000"
+          />
+        </>
+      )}
       <div className="bg-base-200 max-xxs:min-h-xxs-screen max-xxs:mt-28 min-h-content h-fit mt-16">
         {children}
       </div>

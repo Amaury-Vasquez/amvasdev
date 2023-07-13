@@ -13,7 +13,7 @@ const VARIANT_STYLES = {
   accent: 'btn-accent',
   ghost:
     'btn-ghost focus-visible:outline-none focus-visible:border-2 focus-visible:border-solid focus-visible:border-primary',
-  link: 'btn-link',
+  link: 'btn-link underline-offset-2',
   info: 'btn-info',
   success: 'btn-success',
   warning: 'btn-warning',

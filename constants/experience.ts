@@ -14,4 +14,16 @@ export const EXPERIENCE = [
     role: 'Frontend Developer',
     date: 'November 2020 - November 2022',
   },
+  {
+    company: 'Self-taught journey',
+    role: 'Software Engineer',
+    date: 'October 2019 - Present',
+  },
+];
+
+export const EDUCATION = [
+  "Bachelor's Degree in Computer Systems (In progress)",
+  'Self-taught frontend developer (proficient)',
+  'Self-taught backend developer (intermediate)',
+  'Active student at Platzi',
 ];

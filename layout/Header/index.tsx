@@ -1,7 +1,8 @@
 import { FC } from 'react';
+import { MdOutlineNavigateNext } from 'react-icons/md';
 import Menu from './Menu';
-import { Link } from '@/components';
 import ToggleTheme from './ToggleTheme';
+import { Link } from '@/components';
 
 const Header: FC = () => {
   return (
