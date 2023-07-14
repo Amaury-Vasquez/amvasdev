@@ -1,16 +1,32 @@
+import clsx from 'clsx';
 import { forwardRef, HTMLProps } from 'react';
+import ErrorMessage from './ErrorMessage';
 import Label from './Label';
 
 interface TextInputProps extends HTMLProps<HTMLInputElement> {
   label: string;
+  error?: string;
+  valid?: boolean;
 }
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ label, ...props }, ref) => {
+  ({ label, error, valid, ...props }, ref) => {
+    // console.log('🖨️ ~ ref:', ref);
+    // console.log('🖨️ ~ props:', props);
+
     return (
       <div className="flex flex-col text-left">
         <Label text={label} />
-        <input className="input input-bordered" ref={ref} {...props} />
+        <input
+          className={clsx(
+            'input input-bordered',
+            error && 'input-error',
+            valid && 'input-success'
+          )}
+          ref={ref}
+          {...props}
+        />
+        {error && <ErrorMessage text={error} />}
       </div>
     );
   }
