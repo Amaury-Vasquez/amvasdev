@@ -15,7 +15,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     if (typeof window !== 'undefined') {
       document
         .querySelector('html')
-        ?.setAttribute('data-theme', cookies.theme ?? 'corporate');
+        ?.setAttribute('data-theme', cookies.theme ?? 'dracula');
     }
   }, [cookies, setCookie]);
 
@@ -26,17 +26,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      {router.pathname !== '/' && currentPathIndex !== -1 && (
-        <>
-          <IconLink
-            href={
-              currentPathIndex - 1 >= 0
-                ? PAGE_LINKS[currentPathIndex - 1].url
-                : '/'
-            }
-            Icon={MdOutlineNavigateBefore}
-            className="fixed lg:top-1/2 left-2 z-50 text-primary top-32 xs:top-20 bg-base-100 duration-1000"
-          />
+      {router.pathname !== '/' &&
+        currentPathIndex !== -1 &&
+        currentPathIndex && (
           <IconLink
             href={
               currentPathIndex + 1 < PAGE_LINKS.length
@@ -44,10 +36,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 : '/'
             }
             Icon={MdOutlineNavigateNext}
-            className="fixed lg:top-1/2 right-2 z-50 text-primary top-32 xs:top-20 bg-base-100 duration-1000"
+            className="fixed lg:top-1/2 right-2 z-50 text-primary lg:w-12 lg:h-12 w-10 h-10 xxs:top-[72px] top-2 bg-base-200 xs:top-20 xxs:bg-base-100 duration-1000"
           />
-        </>
-      )}
+        )}
       <div className="bg-base-200 max-xxs:min-h-xxs-screen max-xxs:mt-28 min-h-content h-fit mt-16">
         {children}
       </div>

@@ -1,17 +1,6 @@
 import clsx from 'clsx';
 import { FC } from 'react';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
-import { IconLink } from '@/components';
-import { IconLinkItem } from '@/interfaces';
-
-const SOCIAL_MEDIA_LINKS: IconLinkItem[] = [
-  { url: 'https://github.com/Amaury-Vasquez/', icon: FaGithub },
-  {
-    url: 'https://www.linkedin.com/in/amaury-vasquez-dev/',
-    icon: FaLinkedin,
-  },
-  { url: 'https://twitter.com/AmauryVasquez11', icon: FaTwitter },
-];
+import { SocialMediaLinks } from '@/components';
 
 const Footer: FC = () => (
   <footer
@@ -24,14 +13,7 @@ const Footer: FC = () => (
       @amvasdev © All rights reserved
     </p>
     <div className="flex gap-4 max-xs:w-full max-xs:justify-center">
-      {SOCIAL_MEDIA_LINKS.map(({ url, icon }, idx) => (
-        <IconLink
-          Icon={icon}
-          href={url}
-          key={`footer-social-media-link:${idx}`}
-          target="_blank"
-        />
-      ))}
+      <SocialMediaLinks />
     </div>
   </footer>
 );

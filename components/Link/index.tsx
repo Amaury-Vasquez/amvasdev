@@ -1,13 +1,13 @@
 import clsx from 'clsx';
-import { FC, HTMLProps, ReactNode } from 'react';
-import { ButtonVariants, ButtonType, ButtonSizes } from '@/types/buttonTypes';
+import { FC, ReactNode } from 'react';
+import { ButtonVariants, ButtonSizes } from '@/types/buttonTypes';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { LinkTarget } from '@/types/linkTypes';
 
 const VARIANT_STYLES = {
   base: '',
   neutral:
-    'btn-neutral focus-visible:border-2 focus-visible:border-solid focus-visible:outline-none',
+    'btn-neutral focus-visible:border-2 focus-visible:border-solid focus-visible:outline-none focus-visible:border-primary',
   primary: 'btn-primary',
   secondary: 'btn-secondary',
   accent: 'btn-accent',
