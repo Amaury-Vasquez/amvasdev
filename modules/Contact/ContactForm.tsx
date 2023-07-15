@@ -116,42 +116,44 @@ const ContactForm: FC = () => {
           Send
         </Button>
       </form>
-      <Dialog open={isSubmitting || submitted !== undefined} ref={ref}>
-        {isSubmitting ? (
-          <div
-            key="submitting"
-            className="flex flex-col gap-4 items-center animate-fadeIn"
-          >
-            <h3 className="text-primary text-lg">
-              Your email is being sent...
-            </h3>
-            <span className="loading loading-dots text-primary loading-lg animate-pulse" />
-          </div>
-        ) : (
-          submitted !== undefined && (
+      {isSubmitting || submitted !== undefined ? (
+        <Dialog open={true} ref={ref}>
+          {isSubmitting ? (
             <div
-              key="submitted"
+              key="submitting"
               className="flex flex-col gap-4 items-center animate-fadeIn"
             >
-              <h3
-                className={clsx(
-                  'text-lg',
-                  submitted ? 'text-success' : 'text-error'
-                )}
-              >
-                {submitted
-                  ? 'Your email has been sent successfully!'
-                  : 'There was an error sending your email.'}
+              <h3 className="text-primary text-lg">
+                Your email is being sent...
               </h3>
-              {submitted ? (
-                <MdCheckCircleOutline className="text-success text-6xl duration-300" />
-              ) : (
-                <MdErrorOutline className="text-error text-6xl duration-300" />
-              )}
+              <span className="loading loading-dots text-primary loading-lg animate-pulse" />
             </div>
-          )
-        )}
-      </Dialog>
+          ) : (
+            submitted !== undefined && (
+              <div
+                key="submitted"
+                className="flex flex-col gap-4 items-center animate-fadeIn"
+              >
+                <h3
+                  className={clsx(
+                    'text-lg',
+                    submitted ? 'text-success' : 'text-error'
+                  )}
+                >
+                  {submitted
+                    ? 'Your email has been sent successfully!'
+                    : 'There was an error sending your email.'}
+                </h3>
+                {submitted ? (
+                  <MdCheckCircleOutline className="text-success text-6xl duration-300" />
+                ) : (
+                  <MdErrorOutline className="text-error text-6xl duration-300" />
+                )}
+              </div>
+            )
+          )}
+        </Dialog>
+      ) : null}
     </>
   );
 };
