@@ -1,4 +1,3 @@
-import emailjs from '@emailjs/browser';
 import clsx from 'clsx';
 import { FC, useEffect, useState, useRef } from 'react';
 import { MdCheckCircleOutline, MdErrorOutline } from 'react-icons/md';
@@ -6,16 +5,13 @@ import { useForm } from 'react-hook-form';
 import { TextArea, TextInput, Button, Dialog } from '@/components';
 import { ContactFormValues } from '@/interfaces';
 
-const EMAIL_SERVICE = process.env.NEXT_PUBLIC_EMAIL_SERVICE || '';
-const EMAIL_TEMPLATE = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE || '';
-const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY || '';
-
 const ContactForm: FC = () => {
   const {
     register,
     handleSubmit,
     getFieldState,
     formState: { errors },
+    reset,
   } = useForm<ContactFormValues>();
   const ref = useRef<HTMLDialogElement>(null);
   const [submitted, setSubmitted] = useState<boolean | undefined>(undefined);
@@ -25,12 +21,13 @@ const ContactForm: FC = () => {
     ref.current?.showModal();
     setIsSubmitting(true);
     try {
-      await emailjs
-        // @ts-ignore
-        .send(EMAIL_SERVICE, EMAIL_TEMPLATE, data, EMAIL_PUBLIC_KEY)
-        .then(() => {
-          setSubmitted(true);
-        });
+      await fetch('/api/send-email', {
+        method: 'POST',
+        body: JSON.stringify(data),
+      }).then((res) => {
+        setSubmitted(res.status === 201);
+        reset();
+      });
     } catch (error) {
       console.error(error);
       setSubmitted(false);
