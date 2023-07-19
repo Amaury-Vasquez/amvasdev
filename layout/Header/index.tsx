@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { MdOutlineNavigateNext } from 'react-icons/md';
 import Menu from './Menu';
 import ToggleTheme from './ToggleTheme';
 import { Link } from '@/components';

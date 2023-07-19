@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
-import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from 'react-icons/md';
+import { MdOutlineNavigateNext } from 'react-icons/md';
 import Footer from './Footer';
 import Header from './Header';
 import { IconLink } from '@/components';
@@ -16,6 +16,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       document
         .querySelector('html')
         ?.setAttribute('data-theme', cookies.theme ?? 'dracula');
+      if (!cookies.theme) setCookie('theme', 'dracula');
     }
   }, [cookies, setCookie]);
 

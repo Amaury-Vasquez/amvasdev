@@ -7,18 +7,18 @@ export const PAGE_LINKS: ButtonLinkItem[] = [
     variant: 'neutral',
   },
   {
-    name: 'My work',
-    url: '/my-work',
-    variant: 'primary',
-  },
-  {
     name: 'Experience',
+    variant: 'primary',
     url: '/experience',
-    variant: 'secondary',
   },
   {
     name: 'About',
     url: '/about',
+    variant: 'secondary',
+  },
+  {
+    name: 'My work',
+    url: '/my-work',
     variant: 'accent',
   },
   {

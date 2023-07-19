@@ -56,9 +56,9 @@ const About: FC = () => {
             <br />
             <br />
             In addition to my frontend proficiency, I possess a solid foundation
-            in Python, FastAPI, and SQL, which allows me to effectively
-            collaborate with backend developers and seamlessly integrate
-            frontend functionalities.
+            in Python, FastAPI, and SQL, which allows me to collaborate with
+            backend developers and seamlessly integrate frontend functionalities
+            effectively.
           </p>
           <h3 className="text-xl font-medium w-full text-primary">
             Tech stack

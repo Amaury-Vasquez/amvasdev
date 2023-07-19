@@ -1,6 +1,8 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 import { useCookies } from 'react-cookie';
+import { FaHandPointRight } from 'react-icons/fa';
 import { FaCircleCheck } from 'react-icons/fa6';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { Button } from '@/components';
@@ -19,15 +21,22 @@ const ToggleTheme: FC = () => {
   const [cookies, setCookies] = useCookies(['theme']);
   const { isActive, toggle, deactivate } = useToggle(false);
   const ref = useOnClickOutside<HTMLDivElement>(deactivate);
-
+  const router = useRouter();
   const handleCookieChange = (theme: string) => {
     setCookies('theme', theme);
   };
 
   return (
     <div className="dropdown" ref={ref}>
-      <Button className="rounded-md" variant="neutral" onClick={toggle}>
-        <span className="max-xs:hidden ">Theme</span>
+      <Button
+        className="rounded-md relative"
+        variant="neutral"
+        onClick={toggle}
+      >
+        {router.pathname === '/' && (
+          <FaHandPointRight className="absolute top-4 text-accent animate-bounce -left-6 text-lg" />
+        )}
+        <span className="max-xs:hidden">Theme</span>
         <IoOptionsOutline className="w-5 h-5" />
       </Button>
       {isActive && (
