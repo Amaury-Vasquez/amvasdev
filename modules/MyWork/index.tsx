@@ -3,9 +3,10 @@ import {
   SiNextdotjs,
   SiReact,
   SiTailwindcss,
-  SiRollupdotjs,
+  // SiRollupdotjs,
   // SiNpm,
-  // SiDaisyui,
+  SiDaisyui,
+  SiStorybook,
   // SiPython,
   // SiFastapi,
   // SiPostgresql,
@@ -21,6 +22,14 @@ const MY_PROJECTS: Project[] = [
     image: 'https://i.imgur.com/ZPIRzDJ.jpg',
     website: 'https://amvasgames.com',
     github: 'https://github.com/Amaury-Vasquez/amvas-games',
+  },
+  {
+    name: 'Nextjs daisyui starter',
+    description: 'Template for Nextjs projects using daisyui.',
+    Stack: [SiReact, SiTailwindcss, SiDaisyui, SiStorybook, SiNextdotjs],
+    image: 'https://i.imgur.com/JAZ1KNk.png',
+    website: 'https://www.chromatic.com/library?appId=64b9d882cec62379d5d90d0f',
+    github: 'https://github.com/Amaury-Vasquez/next-daisyui-starter.git',
   },
 ];
 
