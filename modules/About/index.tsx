@@ -7,7 +7,7 @@ import Avatar from './Avatar';
 
 const About: FC = () => {
   return (
-    <main className="flex min-h-content items-start justify-center w-full py-10">
+    <main className="flex min-h-content items-start justify-center w-full py-10 animate-fadeIn">
       <div className="max-w-screen xs:max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl grid-cols-1 grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4">
         <article className="flex flex-col gap-4 items-center w-full rounded-md p-4 h-full justify-center">
           <Avatar />

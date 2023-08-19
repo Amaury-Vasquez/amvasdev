@@ -10,7 +10,7 @@ const Experience: FC = () => {
   );
 
   return (
-    <main className="flex flex-col min-h-content items-center justify-start w-full py-10 gap-8">
+    <main className="flex flex-col min-h-content items-center justify-start w-full py-10 gap-8 animate-fadeIn">
       <div className="grid sm:grid-cols-2 max-w-screen xs:max-w-md sm:max-w-xl md:max-w-3xl lg:max-w-6xl gap-8 md:gap-6">
         {subtitle('Work experience')}
         {EXPERIENCE.map((experience, idx) => (

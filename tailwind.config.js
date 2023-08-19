@@ -49,7 +49,6 @@ module.exports = {
       'aqua',
       'halloween',
       'corporate',
-      'coffee',
     ],
   },
   plugins: [require('daisyui')],

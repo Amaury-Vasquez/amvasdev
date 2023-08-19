@@ -35,7 +35,7 @@ const MY_PROJECTS: Project[] = [
 
 const MyWork: FC = () => {
   return (
-    <main className="p-4 sm:p-8">
+    <main className="p-4 sm:p-8 animate-fadeIn">
       <article className="">
         <h1 className="text-2xl font-semibold px-2"> Websites </h1>
         <div className="divider mt-1" />

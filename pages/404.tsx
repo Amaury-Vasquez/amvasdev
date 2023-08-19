@@ -13,7 +13,7 @@ export default function NotFound() {
           content="This page does not exist. Please check the URL and try again."
         />
       </Head>
-      <main className="hero min-h-content">
+      <main className="hero min-h-content animate-fadeIn">
         <div className="hero-content max-w-screen px-4 text-center">
           <article className="max-w-screen xs:max-w-md md:max-w-3xl lg:max-w-4xl flex flex-col gap-8">
             <TbError404 className="m-auto text-9xl" />
