@@ -20,7 +20,7 @@ const MY_PROJECTS: Project[] = [
     description: 'Collection of games created by Amaury Vasquez.',
     Stack: [SiReact, SiNextdotjs, SiTailwindcss],
     image: 'https://i.imgur.com/ZPIRzDJ.jpg',
-    website: 'https://amvasgames.com',
+    website: 'https://games.amauryvasquez.com',
     github: 'https://github.com/Amaury-Vasquez/amvas-games',
   },
   {
