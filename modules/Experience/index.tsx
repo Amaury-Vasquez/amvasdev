@@ -41,6 +41,7 @@ const Experience: FC = () => {
           href="https://platzi.com/p/amauryvasquez/"
           variant="neutral"
           target="_blank"
+          aria-label="Platzi certificates"
         >
           <SiPlatzi className="w-6 h-6 inline-block text-green-500" />
           Platzi

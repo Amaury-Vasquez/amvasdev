@@ -28,12 +28,22 @@ const WorkCard: FC<WorkCardProps> = ({
         ))}
       </span>
       {website && (
-        <Link href={website} variant="primary" target="_blank">
+        <Link
+          href={website}
+          variant="primary"
+          target="_blank"
+          aria-label={`${name} website`}
+        >
           Website
         </Link>
       )}
       {github && (
-        <Link href={github} variant="accent" target="_blank">
+        <Link
+          href={github}
+          variant="accent"
+          target="_blank"
+          aria-label={`${name} github repositorie`}
+        >
           Github
         </Link>
       )}

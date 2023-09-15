@@ -23,6 +23,12 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const currentPathIndex = PAGE_LINKS.findIndex(
     (link) => link.url === router.pathname
   );
+  const nextPath =
+    currentPathIndex + 1 < PAGE_LINKS.length
+      ? PAGE_LINKS[currentPathIndex + 1].url
+      : '/';
+  const ariaLabel =
+    nextPath === '/' ? 'home' : PAGE_LINKS[currentPathIndex + 1].name;
 
   return (
     <>
@@ -31,12 +37,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         currentPathIndex !== -1 &&
         currentPathIndex && (
           <IconLink
-            href={
-              currentPathIndex + 1 < PAGE_LINKS.length
-                ? PAGE_LINKS[currentPathIndex + 1].url
-                : '/'
-            }
+            href={nextPath}
             Icon={MdOutlineNavigateNext}
+            aria-label={ariaLabel}
             className="fixed lg:top-1/2 right-2 z-40 text-primary lg:w-12 lg:h-12 w-10 h-10 xxs:top-[72px] top-2 bg-base-200 xs:top-20 xxs:bg-base-100 duration-1000"
           />
         )}

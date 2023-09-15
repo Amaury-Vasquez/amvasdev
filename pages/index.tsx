@@ -45,7 +45,12 @@ export default function Home() {
             </span>
             <div className="grid grid-cols-2 md:flex justify-center gap-4">
               {PAGE_LINKS.slice(1).map(({ name, url, variant }, idx) => (
-                <Link key={'home-link:' + idx} href={url} variant={variant}>
+                <Link
+                  key={'home-link:' + idx}
+                  href={url}
+                  variant={variant}
+                  aria-label={name}
+                >
                   {name}
                 </Link>
               ))}

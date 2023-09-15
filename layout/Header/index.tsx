@@ -13,6 +13,7 @@ const Header: FC = () => {
         href="/"
         variant="ghost"
         className="normal-case text-xl max-xxs:row-start-1 max-xxs:col-span-2"
+        aria-label="home"
       >
         Amaury Vasquez
       </Link>

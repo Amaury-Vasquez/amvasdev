@@ -18,6 +18,7 @@ const Menu: FC = () => {
         Icon={MdMenu}
         className="btn btn-ghost btn-circle hover:text-primary focusable-base"
         onClick={toggle}
+        name="toggle-menu"
       />
       {isActive && (
         <ul className="menu menu-sm absolute mt-3 z-[1] p-2 shadow-lg shadow-base-300 bg-base-100 rounded-box w-52">
@@ -38,6 +39,7 @@ const Menu: FC = () => {
                     className="hover:text-primary font-semibold"
                     onClick={deactivate}
                     href={url}
+                    aria-label={name}
                   >
                     {name}
                   </Link>

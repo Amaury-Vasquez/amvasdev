@@ -32,6 +32,7 @@ const ToggleTheme: FC = () => {
         className="rounded-md relative"
         variant="neutral"
         onClick={toggle}
+        name="open-theme-menu"
       >
         {router.pathname === '/' && (
           <FaHandPointRight className="absolute top-4 text-accent animate-bounce -left-6 text-lg" />
@@ -47,6 +48,7 @@ const ToggleTheme: FC = () => {
                 className="flex justify-between bg-base-200 text-primary"
                 data-theme={theme}
                 onClick={() => handleCookieChange(theme)}
+                name={`${theme}-theme`}
               >
                 <span className="flex items-center gap-2">
                   {cookies.theme === theme && (

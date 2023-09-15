@@ -109,6 +109,7 @@ const ContactForm: FC = () => {
           variant="primary"
           type="submit"
           onClick={handleSubmit(onSubmit)}
+          name="send contact email"
         >
           Send
         </Button>

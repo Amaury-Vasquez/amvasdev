@@ -5,7 +5,7 @@ export default function ExperiencePage() {
   return (
     <>
       <Head>
-        <title> Amaury Vasquez - Work Experience</title>
+        <title> Amaury Vasquez | Work Experience</title>
         <meta
           name="description"
           content="Amaury Vasquez - Work Experience. React frontend developer."
