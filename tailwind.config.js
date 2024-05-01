@@ -1,3 +1,5 @@
+import { THEME_VARIANTS } from './constants/themes';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -40,15 +42,7 @@ module.exports = {
     },
   },
   daisyui: {
-    themes: [
-      'dracula',
-      'winter',
-      'emerald',
-      'synthwave',
-      'aqua',
-      'halloween',
-      'corporate',
-    ],
+    themes: THEME_VARIANTS,
   },
   plugins: [require('daisyui')],
 };
