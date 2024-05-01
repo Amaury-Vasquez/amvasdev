@@ -1,7 +1,7 @@
 import clsx from 'clsx';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { FC, ReactNode } from 'react';
 import { ButtonVariants, ButtonSizes } from '@/types/buttonTypes';
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { LinkTarget } from '@/types/linkTypes';
 
 const VARIANT_STYLES = {

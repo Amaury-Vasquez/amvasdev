@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
 import emailjs from '@emailjs/nodejs';
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { ContactFormValues } from '@/interfaces';
 
 type Data = {

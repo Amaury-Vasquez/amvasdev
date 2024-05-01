@@ -11,23 +11,21 @@ interface TextAreaProps extends HTMLProps<HTMLTextAreaElement> {
 }
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ label, error, valid, ...props }, ref) => {
-    return (
-      <div className="flex flex-col">
-        <Label text={label} />
-        <textarea
-          className={clsx(
-            'textarea textarea-bordered',
-            error && 'textarea-error',
-            valid && 'textarea-success'
-          )}
-          ref={ref}
-          {...props}
-        />
-        {error && <ErrorMessage text={error} />}
-      </div>
-    );
-  }
+  ({ label, error, valid, ...props }, ref) => (
+    <div className="flex flex-col">
+      <Label text={label} />
+      <textarea
+        className={clsx(
+          'textarea textarea-bordered',
+          error && 'textarea-error',
+          valid && 'textarea-success'
+        )}
+        ref={ref}
+        {...props}
+      />
+      {error && <ErrorMessage text={error} />}
+    </div>
+  )
 );
 
 TextArea.displayName = 'TextArea';

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { FC } from 'react';
 import Link, { LinkProps } from 'next/link';
+import { FC } from 'react';
 import { IconType } from 'react-icons';
 import { ButtonSizes } from '@/types/buttonTypes';
 import { LinkTarget } from '@/types/linkTypes';

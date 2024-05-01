@@ -10,26 +10,21 @@ interface TextInputProps extends HTMLProps<HTMLInputElement> {
 }
 
 const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
-  ({ label, error, valid, ...props }, ref) => {
-    // console.log('🖨️ ~ ref:', ref);
-    // console.log('🖨️ ~ props:', props);
-
-    return (
-      <div className="flex flex-col text-left">
-        <Label text={label} />
-        <input
-          className={clsx(
-            'input input-bordered',
-            error && 'input-error',
-            valid && 'input-success'
-          )}
-          ref={ref}
-          {...props}
-        />
-        {error && <ErrorMessage text={error} />}
-      </div>
-    );
-  }
+  ({ label, error, valid, ...props }, ref) => (
+    <div className="flex flex-col text-left">
+      <Label text={label} />
+      <input
+        className={clsx(
+          'input input-bordered',
+          error && 'input-error',
+          valid && 'input-success'
+        )}
+        ref={ref}
+        {...props}
+      />
+      {error && <ErrorMessage text={error} />}
+    </div>
+  )
 );
 
 TextInput.displayName = 'TextInput';
