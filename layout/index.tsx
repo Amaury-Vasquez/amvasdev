@@ -1,7 +1,5 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
-import { useCookies } from 'react-cookie';
 import { MdOutlineNavigateNext } from 'react-icons/md';
 import Footer from './Footer';
 import Header from './Header';
