@@ -26,6 +26,8 @@ const ToggleTheme: FC = () => {
   const handleCookieChange = useCallback(
     (theme: string) => {
       setCookies('theme', theme);
+      if (typeof window !== 'undefined')
+        document.querySelector('html')?.setAttribute('data-theme', theme);
     },
     [setCookies]
   );

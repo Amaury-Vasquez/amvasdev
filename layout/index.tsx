@@ -9,17 +9,7 @@ import { IconLink } from '@/components';
 import { PAGE_LINKS } from '@/constants';
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const [cookies, setCookie] = useCookies(['theme']);
   const pathname = usePathname();
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      document
-        .querySelector('html')
-        ?.setAttribute('data-theme', cookies.theme ?? 'dracula');
-      if (!cookies.theme) setCookie('theme', 'dracula');
-    }
-  }, [cookies, setCookie]);
 
   const currentPathIndex = PAGE_LINKS.findIndex(
     (link) => link.url === pathname
