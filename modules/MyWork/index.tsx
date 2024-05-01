@@ -11,8 +11,8 @@ import {
   // SiFastapi,
   // SiPostgresql,
 } from 'react-icons/si';
-import { Project } from '@/interfaces';
 import WorkCard from './WorkCard';
+import { Project } from '@/interfaces';
 
 const MY_PROJECTS: Project[] = [
   {
@@ -33,20 +33,18 @@ const MY_PROJECTS: Project[] = [
   },
 ];
 
-const MyWork: FC = () => {
-  return (
-    <main className="p-4 sm:p-8 animate-fadeIn">
-      <article className="">
-        <h1 className="text-2xl font-semibold px-2"> Websites </h1>
-        <div className="divider mt-1" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {MY_PROJECTS.map((project, idx) => (
-            <WorkCard key={idx} {...project} />
-          ))}
-        </div>
-      </article>
-    </main>
-  );
-};
+const MyWork: FC = () => (
+  <main className="p-4 sm:p-8 animate-fadeIn">
+    <article className="">
+      <h1 className="text-2xl font-semibold px-2"> Websites </h1>
+      <div className="divider mt-1" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {MY_PROJECTS.map((project, idx) => (
+          <WorkCard key={idx} {...project} />
+        ))}
+      </div>
+    </article>
+  </main>
+);
 
 export default MyWork;

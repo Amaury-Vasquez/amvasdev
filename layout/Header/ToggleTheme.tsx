@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { useRouter } from 'next/router';
-import { FC } from 'react';
+import { usePathname } from 'next/navigation';
+import { FC, useCallback } from 'react';
 import { useCookies } from 'react-cookie';
 import { FaHandPointRight } from 'react-icons/fa';
 import { FaCircleCheck } from 'react-icons/fa6';
@@ -21,10 +21,14 @@ const ToggleTheme: FC = () => {
   const [cookies, setCookies] = useCookies(['theme']);
   const { isActive, toggle, deactivate } = useToggle(false);
   const ref = useOnClickOutside<HTMLDivElement>(deactivate);
-  const router = useRouter();
-  const handleCookieChange = (theme: string) => {
-    setCookies('theme', theme);
-  };
+  const pathname = usePathname();
+
+  const handleCookieChange = useCallback(
+    (theme: string) => {
+      setCookies('theme', theme);
+    },
+    [setCookies]
+  );
 
   return (
     <div className="dropdown" ref={ref}>
@@ -34,7 +38,7 @@ const ToggleTheme: FC = () => {
         onClick={toggle}
         name="open-theme-menu"
       >
-        {router.pathname === '/' && (
+        {pathname === '/' && (
           <FaHandPointRight className="absolute top-4 text-accent animate-bounce -left-6 text-lg" />
         )}
         <span className="max-xs:hidden">Theme</span>

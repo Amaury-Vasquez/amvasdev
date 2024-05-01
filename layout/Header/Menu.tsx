@@ -1,16 +1,16 @@
 import clsx from 'clsx';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FC } from 'react';
 import { MdMenu } from 'react-icons/md';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useToggle, useOnClickOutside } from '@/hooks';
 import { IconButton } from '@/components';
 import { PAGE_LINKS } from '@/constants';
+import { useToggle, useOnClickOutside } from '@/hooks';
 
 const Menu: FC = () => {
   const { isActive, toggle, deactivate } = useToggle(false);
   const ref = useOnClickOutside<HTMLDivElement>(deactivate);
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return (
     <div className="dropdown" ref={ref}>

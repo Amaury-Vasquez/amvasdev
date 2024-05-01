@@ -43,7 +43,6 @@ module.exports = {
     themes: [
       'dracula',
       'winter',
-      'night',
       'emerald',
       'synthwave',
       'aqua',

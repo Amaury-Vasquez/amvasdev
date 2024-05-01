@@ -1,7 +1,8 @@
+'use client';
 import clsx from 'clsx';
 import { FC, useEffect, useState, useRef } from 'react';
-import { MdCheckCircleOutline, MdErrorOutline } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
+import { MdCheckCircleOutline, MdErrorOutline } from 'react-icons/md';
 import { TextArea, TextInput, Button, Dialog } from '@/components';
 import { ContactFormValues } from '@/interfaces';
 
