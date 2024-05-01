@@ -10,7 +10,7 @@ export default function RootLayout({
   const cookieStorage = cookies();
 
   return (
-    <html lang="en" data-theme={cookieStorage.get('theme')}>
+    <html lang="en" data-theme={cookieStorage.get('theme') ?? 'winter'}>
       <body>
         <AppLayout>{children}</AppLayout>
       </body>
