@@ -26,7 +26,7 @@ export default function Home() {
   ));
 
   return (
-    <main className="hero min-h-content animate-fadeIn">
+    <main className="hero min-h-content animate-fade-in">
       <div className="hero-content max-w-screen px-4 text-center">
         <article className="max-w-screen xs:max-w-md md:max-w-3xl lg:max-w-4xl flex flex-col gap-8">
           <h1 className="xxs:text-xl xs:text-3xl md:text-5xl font-bold max-w-full">

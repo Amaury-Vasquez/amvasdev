@@ -1,13 +1,19 @@
+import clsx, { ClassValue } from 'clsx';
 import { forwardRef, HTMLProps, ReactNode } from 'react';
 
-interface DialogProps extends HTMLProps<HTMLDialogElement> {
+interface DialogProps extends Omit<HTMLProps<HTMLDialogElement>, 'className'> {
   children: ReactNode;
+  className?: ClassValue;
+  closeDialog?: () => void;
 }
 
 const Dialog = forwardRef<HTMLDialogElement, DialogProps>(
-  ({ children, ...props }, ref) => (
-    <dialog className="modal animate-fadeIn" ref={ref} {...props}>
-      <form method="dialog" className="modal-box rounded-sm w-fit">
+  ({ children, className, closeDialog = () => {}, ...props }, ref) => (
+    <dialog className="modal animate-fade-in" ref={ref} {...props}>
+      <form
+        method="dialog"
+        className={clsx('modal-box rounded-lg w-fit', className)}
+      >
         {children}
       </form>
     </dialog>

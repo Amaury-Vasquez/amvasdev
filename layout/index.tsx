@@ -1,5 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
+import { CookiesProvider } from 'react-cookie';
 import { MdOutlineNavigateNext } from 'react-icons/md';
 import Footer from './Footer';
 import Header from './Header';
@@ -20,7 +21,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     nextPath === '/' ? 'home' : PAGE_LINKS[currentPathIndex + 1].name;
 
   return (
-    <>
+    <CookiesProvider>
       <Header />
       {pathname !== '/' && currentPathIndex !== -1 && currentPathIndex && (
         <IconLink
@@ -34,6 +35,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         {children}
       </div>
       <Footer />
-    </>
+    </CookiesProvider>
   );
 }

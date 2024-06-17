@@ -34,6 +34,7 @@ export interface LinkProps extends NextLinkProps {
   target?: LinkTarget;
   size?: ButtonSizes;
   variant?: ButtonVariants;
+  outlined?: boolean;
 }
 
 const Link: FC<LinkProps> = ({
@@ -41,6 +42,7 @@ const Link: FC<LinkProps> = ({
   className,
   tooltip,
   variant,
+  outlined = false,
   size,
   ...props
 }) => (
@@ -49,6 +51,9 @@ const Link: FC<LinkProps> = ({
       'btn whitespace-nowrap',
       variant && VARIANT_STYLES[variant],
       size && SIZE_STYLES[size],
+      {
+        'btn-outline': outlined,
+      },
       className
     )}
     rel="noopener noreferrer"

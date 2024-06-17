@@ -16,7 +16,7 @@ const Avatar: FC = () => {
       >
         <Image
           alt="Amaury Vasquez pic"
-          className={clsx(!isLoading && 'animate-fadeIn')}
+          className={clsx(!isLoading && 'animate-fade-in')}
           src="https://i.imgur.com/oDDWTfG.jpg"
           onLoadingComplete={() => setIsLoading(false)}
           fill

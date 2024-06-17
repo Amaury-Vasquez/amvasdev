@@ -16,7 +16,7 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       keyframes: {
-        fadeIn: {
+        'fade-in': {
           '0%': {
             opacity: '0',
             filter: 'blur(5px)',
@@ -26,9 +26,28 @@ module.exports = {
             filter: 'blur(0px)',
           },
         },
+        'to-top': {
+          '0%': { transform: 'scale(100%)' },
+          '100%': { transform: 'scale(0)', opacity: '0' },
+        },
+        'to-bottom': {
+          '0%': { transform: 'scale(0)', opacity: '0' },
+          '100%': { transform: 'scale(100%)' },
+        },
+        flip: {
+          '90%': {
+            transform: 'rotateY(180deg)',
+          },
+          '100%': {
+            transform: 'rotateY(0)',
+          },
+        },
       },
       animation: {
-        fadeIn: 'fadeIn 0.3s ease-in-out',
+        'fade-in': 'fade-in 0.3s ease-in-out',
+        'to-top': 'to-top 0.2s',
+        'to-bottom': 'to-bottom 0.2s',
+        flip: 'flip 0.5s',
       },
       minHeight: {
         content: 'calc(100vh - 120px)',

@@ -1,13 +1,13 @@
+import { useToggleMenu } from '@amvasdev/usehooks';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { FC, useCallback } from 'react';
+import { FC, useCallback, useRef } from 'react';
 import { useCookies } from 'react-cookie';
 import { FaHandPointRight } from 'react-icons/fa';
 import { FaCircleCheck } from 'react-icons/fa6';
 import { IoOptionsOutline } from 'react-icons/io5';
 import { Button } from '@/components';
 import { THEME_VARIANTS } from '@/constants';
-import { useToggle, useOnClickOutside } from '@/hooks';
 
 const COLORS = [
   'bg-base-100',
@@ -19,8 +19,8 @@ const COLORS = [
 
 const ToggleTheme: FC = () => {
   const [cookies, setCookies] = useCookies(['theme']);
-  const { isActive, toggle, deactivate } = useToggle(false);
-  const ref = useOnClickOutside<HTMLDivElement>(deactivate);
+  const ref = useRef<HTMLDivElement>(null);
+  const { showMenu, togglePanel, isPanelClosing } = useToggleMenu(ref);
   const pathname = usePathname();
 
   const handleCookieChange = useCallback(
@@ -33,11 +33,11 @@ const ToggleTheme: FC = () => {
   );
 
   return (
-    <div className="dropdown" ref={ref}>
+    <div className="relative" ref={ref}>
       <Button
         className="rounded-md relative"
         variant="neutral"
-        onClick={toggle}
+        onClick={togglePanel}
         name="open-theme-menu"
       >
         {pathname === '/' && (
@@ -46,8 +46,15 @@ const ToggleTheme: FC = () => {
         <span className="max-xs:hidden">Theme</span>
         <IoOptionsOutline className="w-5 h-5" />
       </Button>
-      {isActive && (
-        <ul className="menu menu-md gap-4 absolute mt-3 z-[1] right-0 shadow-lg shadow-base-300 bg-base-100 rounded-box max-xxs:w-64 w-80 p-4">
+      {showMenu ? (
+        <ul
+          className={clsx(
+            'menu menu-md gap-4 absolute mt-3 animate-to-bottom z-[1] right-0 shadow-lg shadow-base-300 bg-base-100 rounded-box max-xxs:w-64 w-80 p-4 origin-top-right',
+            {
+              'animate-to-top': isPanelClosing,
+            }
+          )}
+        >
           {THEME_VARIANTS.map((theme, idx) => (
             <li key={theme + idx}>
               <button
@@ -72,7 +79,7 @@ const ToggleTheme: FC = () => {
             </li>
           ))}
         </ul>
-      )}
+      ) : null}
     </div>
   );
 };

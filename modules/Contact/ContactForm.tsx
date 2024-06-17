@@ -120,7 +120,7 @@ const ContactForm: FC = () => {
           {isSubmitting ? (
             <div
               key="submitting"
-              className="flex flex-col gap-4 items-center animate-fadeIn"
+              className="flex flex-col gap-4 items-center animate-fade-in"
             >
               <h3 className="text-primary text-lg">
                 Your email is being sent...
@@ -131,7 +131,7 @@ const ContactForm: FC = () => {
             submitted !== undefined && (
               <div
                 key="submitted"
-                className="flex flex-col gap-4 items-center animate-fadeIn"
+                className="flex flex-col gap-4 items-center animate-fade-in"
               >
                 <h3
                   className={clsx(

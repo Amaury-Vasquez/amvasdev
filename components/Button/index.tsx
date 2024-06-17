@@ -29,6 +29,7 @@ export interface ButtonProps
   children: ReactNode;
   className?: string;
   tooltip?: string;
+  outlined?: boolean;
   type?: ButtonType;
   size?: ButtonSizes;
   variant?: ButtonVariants;
@@ -40,6 +41,7 @@ const Button: FC<ButtonProps> = ({
   tooltip,
   variant = 'base',
   size,
+  outlined = false,
   ...props
 }) => (
   <button
@@ -47,6 +49,9 @@ const Button: FC<ButtonProps> = ({
       'btn whitespace-nowrap',
       variant && VARIANT_STYLES[variant],
       size && SIZE_STYLES[size],
+      {
+        'btn-outline': outlined,
+      },
       className
     )}
     {...props}
